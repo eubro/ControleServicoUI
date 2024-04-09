@@ -1,0 +1,39 @@
+<!-- dashboard.component.html -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card bg-primary text-white">
+        <div class="card-body">
+          <h5 class="card-title">Total de Serviços</h5>
+          <p class="card-text display-4">{{ servicesCount }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card bg-success text-white">
+        <div class="card-body">
+          <h5 class="card-title">Faturamento Total</h5>
+          <p class="card-text display-4">R${{ totalRevenue }},00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    
+    <div class="col-md-12">
+      <div class="card bg-warning text-white">
+        <div class="card-body">
+          <h5 class="card-title">Serviços em Andamento e Concluídos</h5>
+          <p class="card-text display-4 text-white">Em andamento: {{ servicesCount - completedServicesCount }}</p>
+          <p class="card-text display-4 text-white">Concluídos: {{ completedServicesCount }}</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+ 
+</div>

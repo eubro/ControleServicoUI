@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h1>Cadastro de Serviço</h1>
+    <form #form="ngForm" (ngSubmit)="createServico(form)">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" class="form-control" id="nome" [(ngModel)]="servico.nome" name="nome" placeholder="Digite o nome" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone:</label>
+        <input type="tel" class="form-control" id="telefone" [(ngModel)]="servico.numero" name="telefone" placeholder="Digite o telefone" 
+               mask="(00) 00000-0000" required>
+        <div *ngIf="form.controls['telefone'].hasError('pattern') && form.controls['telefone'].touched">
+          O telefone deve estar no formato correto (ex: (99) 99999-9999).
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="valor" class="form-label">Valor:</label>
+        <input type="number" class="form-control" id="valor" [(ngModel)]="servico.valor" name="valor" placeholder="Digite o valor" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <textarea class="form-control" id="descricao" rows="4" [(ngModel)]="servico.descricao" name="descricao" placeholder="Digite a descrição" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Enviar</button>
+    </form>
+  </div>
+  

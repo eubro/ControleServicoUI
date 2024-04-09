@@ -1,0 +1,22 @@
+/* dashboard.component.css */
+
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .metric {
+    text-align: center;
+  }
+  
+  .metric h2 {
+    font-size: 18px;
+  }
+  
+  .metric p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
