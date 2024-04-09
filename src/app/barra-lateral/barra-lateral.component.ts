@@ -5,12 +5,11 @@ import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-barra-lateral',
+  templateUrl: './barra-lateral.component.html',
+  styleUrls: ['./barra-lateral.component.css']
 })
-export class sideBarComponent /*implements OnInit*/ {
-
+export class BarraLateralComponent {
   public users:any = [];
   public role!:string;
 
@@ -46,5 +45,4 @@ export class sideBarComponent /*implements OnInit*/ {
     
     return currentRoute && currentRoute.snapshot.routeConfig?.path === '';
   }
-
 }

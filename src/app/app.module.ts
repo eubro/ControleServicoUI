@@ -16,10 +16,10 @@ import { ServicoConcluidoComponent } from './servico-concluido/servico-concluido
 import { RegistroComponent } from './registro/registro.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import {  sideBarComponent } from './sidebar/sideBar.component';
 import { ResetComponent } from './reset/reset.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 
 
 
@@ -39,8 +39,8 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
     RegistroComponent,
     DashboardComponent,
     ResetComponent,
-    sideBarComponent,
-    RelatoriosComponent
+    RelatoriosComponent,
+    BarraLateralComponent
    ],
   imports: [
     BrowserModule,

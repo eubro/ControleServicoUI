@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthGuard } from './guards/auth.guard';
-import { sideBarComponent } from './sidebar/sideBar.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { ResetComponent } from './reset/reset.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'sidebar',
-    component:sideBarComponent ,
+    component:BarraLateralComponent ,
     canActivate: [AuthGuard],    
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
