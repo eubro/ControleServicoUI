@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { TokenApiModel } from '../models/TokenApiModel';
@@ -55,12 +55,22 @@ export class AuthenticationService {
     return !!localStorage.getItem('token')
    }
 
-   decodedToken(){
-    const jwtHelper = new JwtHelperService();
-    const token = this.getToken();
-    console.log(jwtHelper.decodeToken(token))
-    return jwtHelper.decodeToken(token)
-   }
+   decodedToken() {
+    try {
+        const jwtHelper = new JwtHelperService();
+        const token = this.getToken(); 
+        if (!token) {
+            throw new Error('Token não fornecido');
+        }
+        const decoded = jwtHelper.decodeToken(token);
+        
+        return decoded;
+    } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+        return null; 
+    }
+}
+
 
    getfullNameFromToken(){
     if(this.userPayload)
